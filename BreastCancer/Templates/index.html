@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Breast Cancer</title>
+    <style>
+      body {
+        background-image: url("../static/bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .wrap {
+        background: #ffffff;
+        border: solid 2px #ccc4c4;
+        width: 50%;
+        height: 50%;
+        margin: 50px auto;
+        padding: 15px;
+      }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../static/logo.png" type="image/x-icon" />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar goes here -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #f3f2f2"
+    >
+      <!-- Logo -->
+      <a class="navbar-brand" href="#" style="color: black">
+        <img
+          src="../static/navlogo3.PNG"
+          width="80px"
+          height="20%"
+          alt="Logo"
+        />
+      </a>
+
+      <!-- Button for toggling Navbar content on small screens -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        style="color: #ffc0cb; background-color: rgb(235, 228, 228)"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar content -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <!-- Left content -->
+        </ul>
+        <ul class="navbar-nav mx-10%">
+          <!-- Centered content -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: black">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: black">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: black">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <!-- Right content -->
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light"
+              href="#"
+              style="background-color: #ffc0cb; color: #ffffff"
+              >Start Now</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content">
+      <div class="wrap">
+        <!-- محتوى الصفحة هنا -->
+        <form action="{{url_for('predict')}}" method="post">
+          <div class="form-row">
+            <div
+              class="col-12 text-center"
+              style="margin-bottom: 10px; font-style: bold"
+            >
+              <h4>Mean Values</h4>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput1">radius mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput2">texture mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput2"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput3">perimeter mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput3"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput4">area mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput4"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput5">smoothness mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput5"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput6">compactness mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput6"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput7">concavity mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput7"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput8">concave points mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput8"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput9">symmetry mean</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput9"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="exampleFormControlInput10"
+                >fractal Dimension mean</label
+              >
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput10"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div
+              class="col-12 text-center"
+              style="margin: 10px auto; font-style: bold"
+            >
+              <h4>Standard Error Values</h4>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput11">radius se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput11"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput12">texture se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput12"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput13">perimeter se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput13"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput14">area se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput14"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput15">smoothness se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput15"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput16">compactness se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput16"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput17">concavity se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput17"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput18">concave points se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput18"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput19">symmetry se</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput19"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="exampleFormControlInput20"
+                >fractal dimension se</label
+              >
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput20"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div
+              class="col-12 text-center"
+              style="margin: 10px auto; font-style: bold"
+            >
+              <h4>Worst Values</h4>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput21">radius worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput21"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput22">texture worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput22"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput23">perimeter worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput23"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput24">area worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput24"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput25">smoothness worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput25"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput26">compactness worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput26"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput27">concavity worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput27"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput28"
+                >concave points worst</label
+              >
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput28"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlInput29">symmetry worst</label>
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput29"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="exampleFormControlInput30"
+                >fractal dimension worst</label
+              >
+              <input
+                type="text"
+                name="Breast"
+                class="form-control"
+                id="exampleFormControlInput30"
+                placeholder="0.00"
+                required="required"
+              />
+            </div>
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+        <br />
+        <div style="text-align: center">
+          <b>{{Breast}}</b>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
